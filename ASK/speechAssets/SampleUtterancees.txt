@@ -1,0 +1,8 @@
+GetWeatherIntent what is the {temperature|WeatherMetric}
+GetWeatherIntent what is the {temperature|WeatherMetric} on mars
+GetWeatherIntent what is the {humidity|WeatherMetric}
+GetWeatherIntent what is the {humidity|WeatherMetric} on mars
+GetWeatherIntent what is the {conditions|WeatherMetric}
+GetWeatherIntent what is the {conditions|WeatherMetric} on mars
+GetWeatherIntent what are the weather {conditions|WeatherMetric}
+GetWeatherIntent what are the weather {conditions|WeatherMetric} on mars
