@@ -1,0 +1,16 @@
+{
+  "intents": [
+    {
+      "intent": "GetWeatherIntent",
+      "slots": [
+        {
+          "name": "WeatherMetric",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
