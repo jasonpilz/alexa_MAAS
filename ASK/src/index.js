@@ -4,9 +4,9 @@ const https       = require('https');
 const alexaSkill  = require('./AlexaSkill');
 
 const APP_ID      = undefined;
-const accessToken = undefined;
 
-const maasUrl     = undefined;
+const hostUrl     = 'http://marsweather.ingenology.com';
+const pathUrl     = '/v1/latest/';
 
 // Mass is a child of AlexaSkill
 let Mass = function() {
@@ -29,7 +29,7 @@ Mass.prototype.eventHandlers.onLaunch = (launchRequest, session, resoponse) => {
 
   const welomeMessage = `Welcome to mars weather.
                          You can ask me for the current weather conditions,
-                         temperature or humidity`
+                         temperature or humidity`;
   response.ask(welomeMessage);
 };
 
@@ -38,10 +38,26 @@ Mass.prototype.eventHandlers.onSessionEnded = (sessionEndedRequest, session) => 
                                    sessionId: ${session.sessionId}`);
 };
 
+const weatherMetrics = new Array('humidity',
+                                 'temperature',
+                                 'pressure',
+                                 'condition',
+                                 'conditions',
+                                 'earth date',
+                                 'terrestrial date');
+
 // Handle Intents
 Mass.prototype.intentHandlers = {
   WeatherIntent: (intent, session, response) => {
-    // TODO
+    let weatherMetricSlot = intent.slots.WeatherMetric;
+
+    // if (weatherMetricSlot && weatherMetricSlot.value) {
+    //   if (weatherMetrics.include?(weatherMetricSlot.value) {
+
+    //   } else {
+    //     handleNoSlotDialogRequest(intent, session, response);
+    //   }
+    // }
   },
 
   "AMAZON.HelpIntent": (intent, session, response) => {
@@ -50,14 +66,28 @@ Mass.prototype.intentHandlers = {
 };
 
 // Helper Functions
-// TODO
+function callMassApi(callback) {
+  let options = {
+    hostname: hostUrl,
+    port: 443,
+    path: pathUrl,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  };
 
+  makeRequest(options, callback);
+}
+
+function makeRequest (options, callback) {
+
+}
 
 // Create the handler that responds to the Alexa Request
 exports.handler = (event, context) => {
 
   // Create an instance of the Mass skill
   const massSkill = new Mass();
-  MassSkill.execute(event, context);
+  massSkill.execute(event, context);
 };
-
