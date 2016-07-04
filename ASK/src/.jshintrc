@@ -2,6 +2,7 @@
   "node": true,
   "esversion": 6,
   "globals": {
-
+    "AlexaSkill": true,
+    "response": true
   }
 }
