@@ -6,3 +6,9 @@ GetWeatherIntent what is the {conditions|WeatherMetric}
 GetWeatherIntent what is the {conditions|WeatherMetric} on mars
 GetWeatherIntent what are the weather {conditions|WeatherMetric}
 GetWeatherIntent what are the weather {conditions|WeatherMetric} on mars
+GetWeatherIntent what is the {pressure|WeatherMetric}
+GetWeatherIntent what is the {pressure|WeatherMetric} on mars
+GetWeatherIntent what is the {terrestrial date|WeatherMetric}
+GetWeatherIntent what is the {terrestrial date|WeatherMetric} on mars
+GetWeatherIntent what is the {earth date|WeatherMetric}
+GetWeatherIntent what is the {earth date|WeatherMetric} on mars
